@@ -1,6 +1,17 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.graphql.apollo)
+}
+
+apollo {
+    service("service") {
+        packageName.set("com.nuncamaria") // esto es básicamente el paquete donde generarán los archivos de graphql
+        introspection {
+            endpointUrl.set("https://countries.trevorblades.com/graphql") //the endpoint
+            schemaFile.set(file("src/main/graphql/com/nuncamaria/schema.graphqls")) //the schema file location
+        }
+    }
 }
 
 android {
@@ -30,11 +41,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = JavaVersion.VERSION_17.toString()
     }
     buildFeatures {
         compose = true
@@ -59,6 +70,14 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+
+    implementation(libs.graphql.apollo.runtime)
+
+    implementation(libs.retrofit2)
+    implementation(libs.retrofit2.gson)
+    implementation(libs.okhttp3.okhttp)
+    implementation(libs.okhttp3.interceptor)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

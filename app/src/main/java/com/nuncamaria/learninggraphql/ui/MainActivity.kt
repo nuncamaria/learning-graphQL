@@ -1,4 +1,4 @@
-package com.nuncamaria.learninggraphql
+package com.nuncamaria.learninggraphql.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
