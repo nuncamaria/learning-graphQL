@@ -9,7 +9,7 @@ object ApolloClient {
 
     private const val BASE_URL = "https://countries.trevorblades.com"
 
-    fun provideApolloClient(): ApolloClient {
+    fun provideApolloClient(url: String = BASE_URL): ApolloClient {
         val logging = HttpLoggingInterceptor()
         logging.level = HttpLoggingInterceptor.Level.BODY
 
@@ -18,7 +18,7 @@ object ApolloClient {
             .addInterceptor(logging)
 
         return ApolloClient.Builder()
-            .serverUrl(BASE_URL)
+            .serverUrl(url)
             .okHttpClient(okHttp.build())
             .build()
     }
