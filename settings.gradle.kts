@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Learning GraphQL"
 include(":app")
+include(":network")
