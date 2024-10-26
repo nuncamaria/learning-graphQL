@@ -18,9 +18,15 @@ class CountriesViewModel(getCountries: GetCountriesUseCase) : ViewModel() {
         _state.update { it.copy(isLoading = true) }
 
         viewModelScope.launch {
-            _state.update {
-                it.copy(data = getCountries())
-            }
+            getCountries()
+                .onSuccess { result ->
+                    _state.update { it.copy(data = result) }
+                }
+                .onFailure { e ->
+                    _state.update {
+                        it.copy(errorMessage = e.localizedMessage)
+                    }
+                }
         }
     }
 }

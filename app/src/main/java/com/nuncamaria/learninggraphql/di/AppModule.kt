@@ -1,5 +1,6 @@
 package com.nuncamaria.learninggraphql.di
 
+import com.nuncamaria.learninggraphql.data.network.GetCountriesDataSource
 import com.nuncamaria.learninggraphql.data.repositories.GetCountriesRepositoryImpl
 import com.nuncamaria.learninggraphql.domain.repositories.GetCountriesRepository
 import com.nuncamaria.learninggraphql.domain.usecases.GetCountriesUseCase
@@ -11,6 +12,8 @@ import org.koin.dsl.module
 val appModule = module {
 
     single { ApolloClient }
+
+    single { GetCountriesDataSource(get()) }
 
     single<GetCountriesRepository> { GetCountriesRepositoryImpl(get()) }
 

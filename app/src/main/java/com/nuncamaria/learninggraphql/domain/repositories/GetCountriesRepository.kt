@@ -4,5 +4,5 @@ import com.nuncamaria.GetCountriesQuery
 
 interface GetCountriesRepository {
 
-    suspend fun getCountries(): List<GetCountriesQuery.Country>
+    suspend fun getCountries(): Result<List<GetCountriesQuery.Country>>
 }
