@@ -8,14 +8,14 @@ espressoCore = "3.6.1"
 lifecycleRuntimeKtx = "2.8.6"
 activityCompose = "1.9.3"
 composeBom = "2024.10.00"
-graphql = "4.0.1"
+graphql = "3.7.3"
 okhttp = "5.0.0-alpha.2"
 retrofit = "2.9.0"
 koinCompose = "3.5.3"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
-graphql-apollo-runtime = { module = "com.apollographql.apollo:apollo-runtime", version.ref = "graphql" }
+graphql-apollo-runtime = { module = "com.apollographql.apollo3:apollo-runtime", version.ref = "graphql" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -38,6 +38,6 @@ retrofit2-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-graphql-apollo = { id = "com.apollographql.apollo", version.ref = "graphql" }
+graphql-apollo = { id = "com.apollographql.apollo3", version.ref = "graphql" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 
