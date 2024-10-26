@@ -74,13 +74,6 @@ dependencies {
 
     implementation(libs.koin.compose)
 
-    implementation(libs.graphql.apollo.runtime)
-
-    implementation(libs.retrofit2)
-    implementation(libs.retrofit2.gson)
-    implementation(libs.okhttp3.okhttp)
-    implementation(libs.okhttp3.interceptor)
-
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
